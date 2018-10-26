@@ -1,0 +1,14 @@
+<?php
+$title = 'It is a title';
+$str = "{{ $title }}";
+?>
+
+<html>
+    <head>
+        <title><?php echo  $title ?></title>
+    <head>
+    <body>
+        <h2><?php echo  $str ?></h2>
+        <p><?php echo  $body ?><p>
+    </body>
+</html>
