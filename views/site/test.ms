@@ -33,5 +33,7 @@ $str = "{{ $title }}";
             @endif
         @endwhile
 
+
+
     </body>
 </html>

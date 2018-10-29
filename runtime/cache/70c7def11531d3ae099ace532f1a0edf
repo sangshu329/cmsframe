@@ -5,10 +5,33 @@ $str = "{{ $title }}";
 
 <html>
     <head>
-        <title><?php echo  $title ?></title>
+        <title><?php echo htmlentities(isset( $title )? $title :null) ?></title>
     <head>
     <body>
-        <h2><?php echo  $str ?></h2>
-        <p><?php echo  $body ?><p>
+        <h2><?php echo htmlentities(isset( $str )? $str :null) ?></h2>
+        <p><?php echo htmlentities(isset( $body )? $body :null) ?><p>
+        <?php if(count($users) === 1): ?>
+            I have one $user!
+        <?php elseif(count($users) > 1): ?>
+            I have multiple $users!
+        <?php else: ?>
+            I don't have any $users!
+        <?php endif; ?>
+        <br/>
+        <?php for($i = 0; $i < 10; $i++): ?>
+            The current value is <?php echo htmlentities(isset( $i )? $i :null) ?><br/>
+        <?php endfor; ?>
+
+        <?php foreach($users as $user): ?>
+            <p>This is user <?php echo htmlentities(isset( $user )? $user :null) ?></p>
+        <?php endforeach; ?>
+
+        <?php while(true): ?>
+            <p>I'm looping once.</p>
+            <?php if($i > 1): ?>
+                <?php break; ?>
+            <?php endif; ?>
+        <?php endwhile; ?>
+
     </body>
 </html>

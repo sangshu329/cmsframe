@@ -24,7 +24,8 @@ class SiteController extends \ms\web\Controller {
 
     public function actionView()
     {
-        $this->render('site/view',['body'=>'test view']);
+//        $this->render('site/view',['body'=>'test view']);
+        $this->render('site/view', ['body' => 'Test body information', 'users' => [1, 2,3]]);
     }
 
     public function actionCache()
